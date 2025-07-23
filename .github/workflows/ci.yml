@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker image
-        run: docker build -f Dockerfile -t pdfqa-chatbot:latest .
+        run: docker build -f dockerfile -t pdfqa-chatbot:latest .
 
   build_and_push:
     needs: docker_build
@@ -55,6 +55,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Dockerfile
+          file: ./dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/pdf_qa_bot-app:latest
