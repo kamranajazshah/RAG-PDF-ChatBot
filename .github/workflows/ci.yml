@@ -3,10 +3,10 @@ name: CI_CD_PDF_QA_CHATBOT
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build_and_test:
